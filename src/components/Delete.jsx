@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { FaFire } from "react-icons/fa"
+import { FiTrash } from "react-icons/fi"
 
 const Delete = ({ setCard }) => {
   const [active, setActive] = useState(false)
@@ -9,7 +11,7 @@ const Delete = ({ setCard }) => {
       shrink-0 place-content-center 
       rounded border text-3xl`}
     >
-      {/* {active ? <FaFire className="animate-bounce" /> : <FiTrash />} */}
+      {active ? <FaFire className="animate-bounce" /> : <FiTrash />}
     </div>
   )
 };
