@@ -2,14 +2,28 @@ import { useState } from "react";
 import Button from "./UI/button/Button";
 import { FiPlus } from "react-icons/fi";
 import Form from "./UI/form/Form";
+import { motion } from "framer-motion"
 
-const AddCards = () => {
+const AddCards = ({column, setCards}) => {
   
   const [adding, setAdding] = useState(false)
+  const [text, setText] = useState('')
+
+  const addCard = (newCard) => {
+    setCards((card) => [...card, newCard])
+  }
+
   return (
     <>
       {adding 
-      ? <Form>
+      ? <Form
+          addCard={addCard}
+          setCards={setCards}
+          text={text} 
+          setText={setText}
+          setAdding={setAdding}
+          column={column} 
+        >
         <div className="mt-1.5 flex items-center justify-end gap-1.5">
         <button
           type="submit"

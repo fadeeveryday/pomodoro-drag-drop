@@ -1,13 +1,13 @@
-
+import { motion } from "framer-motion"
 
 const Button = ({ children, ...props}) => {
   return (
-    <button onClick={props.onClick} className="
+    <motion.button layout onClick={props.onClick} className="
     flex items-center gap-1.5
     px-3 py-1.5 text-xs text-neutral-400 
     transition-colors hover:text-neutral-50">
       {children}
-    </button>
+    </motion.button>
   )
 };
 

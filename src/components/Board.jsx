@@ -29,7 +29,7 @@ const Board = () => {
         cards={cards}
         setCards={setCards}
       />
-      <Delete />
+      <Delete setCards={setCards}/>
     </div>
   )
 };

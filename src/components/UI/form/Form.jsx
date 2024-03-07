@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { motion } from "framer-motion"
 
-const Form = ( {children, ...props }) => {
-  const [text, setText] = useState('')
+const Form = ( {children, text, setText, addCard, setAdding, column } ) => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if(!text.trim().length) return
+
+    const newCard = {
+      column,
+      title: text,
+      id: Math.random().toString(),
+    }
+
+    addCard(newCard)
+    setAdding(false)
+  }
 
   return (
-    <form >
+    <motion.form layout onSubmit={handleSubmit}>
       <textarea
         onChange={(e) => setText(e.target.value)}
         autoFocus
@@ -15,7 +29,7 @@ const Form = ( {children, ...props }) => {
           placeholder-violet-300 focus:outline-0"
         />
         {children}
-    </form>
+    </motion.form>
   )
 };
 
