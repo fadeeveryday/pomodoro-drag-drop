@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-const Form = ( {children, text, setText, addCard, setAdding, column } ) => {
+const Form = ( {children, text, setText, addCard, setAdding, column, onKeyDown } ) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -27,6 +27,7 @@ const Form = ( {children, text, setText, addCard, setAdding, column } ) => {
           w-full rounded border border-violet-400 
           bg-violet-400/20 p-3 text-sm text-neutral-50 
           placeholder-violet-300 focus:outline-0"
+        onKeyDown={onKeyDown}
         />
         {children}
     </motion.form>

@@ -8,7 +8,7 @@ const Card = ({title, id, column, handleDragStart}) => {
       <motion.div
       layout
       layoutId={id}
-      onDragStart={(event) => handleDragStart(event, title, id, column)}
+      onDragStart={(event) => handleDragStart(event, id)}
       draggable="true"
       className="
       cursor-grab 

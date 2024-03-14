@@ -2,7 +2,6 @@ import { useState } from "react";
 import Button from "./UI/button/Button";
 import { FiPlus } from "react-icons/fi";
 import Form from "./UI/form/Form";
-import { motion } from "framer-motion"
 
 const AddCards = ({column, setCards}) => {
   
@@ -11,6 +10,12 @@ const AddCards = ({column, setCards}) => {
 
   const addCard = (newCard) => {
     setCards((card) => [...card, newCard])
+  }
+
+  const handleClick = (event) => {
+    if (event.keyCode === 13) {
+      document.getElementById("EnterBtn").click()
+    }
   }
 
   return (
@@ -22,11 +27,13 @@ const AddCards = ({column, setCards}) => {
           text={text} 
           setText={setText}
           setAdding={setAdding}
-          column={column} 
+          column={column}
+          onKeyDown={handleClick}
         >
         <div className="mt-1.5 flex items-center justify-end gap-1.5">
         <button
           type="submit"
+          id="EnterBtn"
           className="
           flex items-center gap-1.5 
           rounded bg-neutral-50 px-3 py-1.5 
