@@ -42,7 +42,6 @@ const Column = ({title, headingColor, column, cards, setCards}) => {
     const { element } = getNearestindicator(event, indicators)
 
     const before = element.dataset.before || "-1"
-    // console.log(cardId)
     if (before !== cardId) {
       let copyCard = [...cards]
 
@@ -108,14 +107,14 @@ const Column = ({title, headingColor, column, cards, setCards}) => {
       onDrop={handleDragEnd}
       onDragOver={handleDragOver}
       className="w-56 shrink-0">
-      <div className="mb-3 flex items-center justify-between">
+      <div className="mb-5 flex items-center justify-between">
         <h3 className={`font-medium ${headingColor}`}>{title}</h3>
         <span className="rounded text-sm text-neutral-400">
           {filteredCards.length}
         </span>
       </div>
       <div
-        className={`h-full w-full transition-colors ${
+        className={`h-5/6 w-full rounded transition-colors ${
           active ? "bg-neutral-800/50" : "bg-neutral-800/0"
         }`}
       >
