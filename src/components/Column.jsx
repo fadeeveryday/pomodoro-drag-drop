@@ -114,7 +114,7 @@ const Column = ({title, headingColor, column, cards, setCards}) => {
         </span>
       </div>
       <div
-        className={`h-5/6 w-full rounded transition-colors ${
+        className={`h-full mb-5 w-full rounded transition-colors ${
           active ? "bg-neutral-800/50" : "bg-neutral-800/0"
         }`}
       >

@@ -9,7 +9,7 @@ const Timer = () => {
     flex items-center gap-1.5
      text-s text-neutral-400 pr-5">
       <span>
-        { `${now.getHours()}:${now.getMinutes()}` }
+        { `${now.getHours()}:${now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes()}`}
       </span>
     </div>
   )
